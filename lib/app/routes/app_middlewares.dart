@@ -8,13 +8,13 @@ import 'index.dart';
 /// 全局中间件
 class AppMiddlewares {
   static routingCallback(Routing? routing) {
-    sLog.v('''
-AppMiddleware
-current: ${routing?.current}
-routeName:${routing?.route?.settings.name} 
-isBottomSheet: ${routing?.isBottomSheet} 
-isDialog: ${routing?.isDialog}
-isBack: ${routing?.isBack}''');
+//     sLog.v('''
+// AppMiddleware
+// current: ${routing?.current}
+// routeName:${routing?.route?.settings.name}
+// isBottomSheet: ${routing?.isBottomSheet}
+// isDialog: ${routing?.isDialog}
+// isBack: ${routing?.isBack}''');
     _checkRouteChange('${routing?.route?.settings.name}');
   }
 

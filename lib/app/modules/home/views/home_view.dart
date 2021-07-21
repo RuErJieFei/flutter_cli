@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cli/app/data/services/browser.dart';
 
 import 'package:get/get.dart';
 
@@ -13,9 +14,15 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+        child: FloatingActionButton(
+          onPressed: () {
+            controller.toWeb();
+          },
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          backgroundColor: Colors.blue,
         ),
       ),
     );

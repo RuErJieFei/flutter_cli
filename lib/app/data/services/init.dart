@@ -1,23 +1,12 @@
 import 'package:get/get.dart';
 
 // import '../../modules/splash/controllers/splash_controller.dart';
+import 'browser.dart';
 import 'sentry.dart';
 import 'index.dart';
 
+/// 服务初始化
 Future initServices() async {
-  Get.put(SentryService());
-  // Get.put(TaskService()..init());
-  // Get.put(LifecycleService());
-  // await Get.putAsync(() => ConnectivityService().init());
-  // await Get.putAsync(() => HttpService().init());
-  // await Get.putAsync(() => AppUpgraderService().init());
-  // Get.put(WebSocketService());
-  // Get.put(DbService());
-  // await Get.putAsync(() => AppService().init());
-  // await Get.putAsync(() => VibrationService().init());
-
-  // Get.lazyPut(() => ImagePickerService());
-  // Get.lazyPut(() => BrowserService());
-
-  // SplashController.to.allServicesReady.value = true;
+  Get.lazyPut(() => SentryService());
+  Get.lazyPut(() => BrowserService());
 }

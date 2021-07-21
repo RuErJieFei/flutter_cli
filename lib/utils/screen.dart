@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// 屏幕适配
 class ScreenUtil {
   ScreenUtil._();
 

@@ -15,13 +15,13 @@ class SharedPreferecesService extends GetxService {
 
   Future<SharedPreferecesService> init() async {
     _prefs = await SharedPreferences.getInstance();
-    sLog.e("SharedPreferences init()");
+    // sLog.e("SharedPreferences init()");
     return this;
   }
 
   @override
   void onInit() {
-    sLog.e("SharedPreferences onInit");
+    // sLog.e("SharedPreferences onInit");
     super.onInit();
   }
 

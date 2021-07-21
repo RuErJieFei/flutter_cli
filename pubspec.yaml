@@ -1,0 +1,35 @@
+name: flutter_cli
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  # 国际化
+  flutter_localizations:
+    sdk: flutter
+  # 项目框架：主要完成状态管理、路由管理、依赖管理
+  get: ^4.2.1+2
+  # 文件路径
+  path_provider: ^2.0.2
+  # 日志
+  logger: ^1.0.0
+  # 埋点
+  sentry_flutter: ^5.1.0
+  # 吐司
+  bot_toast: ^4.0.1
+  # 持久化
+  shared_preferences: ^2.0.6
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  lints: 1.0.1
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+

@@ -1,10 +1,18 @@
 # flutter脚手架
+## GetX CLI使用说明
 
-1. 编码规范
+https://github.com/jonataslaw/get_cli/blob/master/README-zh_CN.md 
 
-   一定要看！！！
+## GetX 插件使用说明
 
-   [用法示例](https://dart.cn/guides/language/effective-dart/usage#dont-allow-an-import-path-to-reach-into-or-out-of-lib)
+https://github.com/kauemurakami/getx_snippets_extension
+
+## 编码规范
+
+一定要看！！！
+
+[用法示例](https://dart.cn/guides/language/effective-dart/usage#dont-allow-an-import-path-to-reach-into-or-out-of-lib)
+
 ## 编码规范
 
 1. 同文件夹类超过3个用 `index.dart` 暴露给外部 `import`
@@ -28,7 +36,7 @@ UI.showPageDailog(
 )
 ```
 
-4 `initService` 代码规范
+4. `initService` 代码规范
   - 不出现业务代码
   - 只包含 Service 类
   - 多 Service 如果有依赖关系，需要严格使用 `await` 控制。
@@ -125,9 +133,8 @@ MyUI.showPageBottomSheet(
 );
 ```
 
-6. 网络请求
+## 网络请求
 
-7. 主题
 # 暗黑和亮色主题
 
 ### 主题色配置
@@ -201,7 +208,6 @@ if (result is int) {
 }
 ```
 
-8. 国际化
 ### 国际化
 #### 1. 在 `assets/locales` 文件夹下创建对应语言的国家化文本
 
@@ -345,20 +351,98 @@ void updateLocale(Locale? locale) {
 }
 ```
 
-9. 常用三方库
+## 常用三方库
 
-   在·`yaml`文件中有详细的注释
+在·`yaml`文件中有详细的注释
 
-10. 接入原生通道
+## 接入原生通道
 
-11. GetX CLI使用说明
+## 数据库使用
+### 创建表
 
-​                 https://github.com/jonataslaw/get_cli/blob/master/README-zh_CN.md 
+在 `databases/tables` 里创建表文件
 
-11. GetX 插件使用说明
+```dart
+import 'package:moor/moor.dart';
 
-    https://github.com/kauemurakami/getx_snippets_extension
+class Students extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get name => text()();
+  IntColumn get score => integer()();
+}
+```
 
-12. 
+### 创建 Dao
 
-    
+在 `databases/daos` 里创建表对应的 dao 文件
+
+```dart
+import 'package:moor/moor.dart';
+
+import '../app_db.dart';
+import '../tables/students.dart';
+
+/// 有个报错没关系
+part 'students.g.dart';
+
+@UseDao(tables: [Students])
+class StudentsDao extends DatabaseAccessor<AppDb> with _$StudentsDaoMixin {
+  StudentsDao(AppDb db) : super(db);
+}
+```
+
+### 绑定表和 Dao 到 DB
+
+`databases/app_db.dart`
+
+```dart
+import 'dart:io';
+
+import 'package:moor/ffi.dart';
+import 'package:moor/moor.dart';
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
+
+import 'daos/students.dart';
+import 'tables/students.dart';
+
+part 'app_db.g.dart';
+
+@UseMoor(
+  // 绑定 tables
+  tables: [Students],
+  // 绑定 daos
+  daos: [StudentsDao],
+)
+class AppDb extends _$AppDb {
+  AppDb() : super(_openConnection());
+
+  @override
+  int get schemaVersion => 1;
+
+  /// 数据库版本升级处理代码在这里进行
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+      onCreate: (Migrator m) {
+        return m.createAll();
+      },
+      onUpgrade: (Migrator m, int from, int to) async {});
+}
+
+LazyDatabase _openConnection() {
+  return LazyDatabase(() async {
+    /// 定义数据库存储路径
+    final file = File(p.join(
+        (await getApplicationDocumentsDirectory()).path, 'app_db.sqlite'));
+    return VmDatabase(file);
+  });
+}
+
+```
+
+### 生成代码
+
+```shell
+flutter pub run build_runner build 
+```
+

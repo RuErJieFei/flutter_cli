@@ -3,7 +3,7 @@ import 'package:logger/logger.dart';
 
 class Config {
   /// 应用名
-  static const APP_NAME = 'Pecker Flutter';
+  static const APP_NAME = 'Flutter CLI';
 
   /// 日志登记
   static const LOG_LEVEL = Level.debug;

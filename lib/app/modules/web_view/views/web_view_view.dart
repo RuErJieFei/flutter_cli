@@ -51,7 +51,7 @@ class WebViewView extends GetView<WebViewController> {
                   },
                   onLoadStart:
                       (InAppWebViewController webViewController, Uri? uri) {
-                    sLog.d("onLoadStart $uri");
+                    // sLog.d("onLoadStart $uri");
                   },
                   onLoadStop:
                       (InAppWebViewController webViewController, Uri? uri) {

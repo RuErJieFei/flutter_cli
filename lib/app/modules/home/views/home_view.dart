@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/app/data/services/browser.dart';
+import 'package:flutter_cli/app/routes/index.dart';
 
 import 'package:get/get.dart';
 
@@ -14,15 +14,28 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Center(
-        child: FloatingActionButton(
-          onPressed: () {
-            controller.toWeb();
-          },
-          child: Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-          backgroundColor: Colors.blue,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            FloatingActionButton(
+              heroTag: '1',
+              onPressed: () => controller.toWeb(),
+              child: Text('Web'),
+              backgroundColor: Colors.blue,
+            ),
+            FloatingActionButton(
+              heroTag: '2',
+              onPressed: () => controller.upToast(),
+              child: Text('Toast'),
+              backgroundColor: Colors.blue,
+            ),
+            FloatingActionButton(
+              heroTag: '3',
+              onPressed: () => Get.toNamed(Routes.GLOBAL_WIDGETS_SAMPLE_VIEW),
+              child: Text('widget'),
+              backgroundColor: Colors.blue,
+            ),
+          ],
         ),
       ),
     );

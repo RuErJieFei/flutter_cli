@@ -8,5 +8,5 @@ import 'index.dart';
 /// 服务初始化
 Future initServices() async {
   Get.lazyPut(() => SentryService());
-  Get.lazyPut(() => BrowserService());
+  await Get.put(() => BrowserService());
 }

@@ -13,7 +13,7 @@ import 'app/data/services/init.dart';
 void main() async {
   final run = () async {
     WidgetsFlutterBinding.ensureInitialized();
-    await Get.putAsync(() => SharedPreferecesService().init());
+    await Get.putAsync(() => SharedPrefereces().init());
     initServices();
     return runApp(App());
   };

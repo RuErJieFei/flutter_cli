@@ -26,11 +26,33 @@ dependencies:
   shared_preferences: ^2.0.6
   # 嵌入web网页
   flutter_inappwebview: ^5.3.2
-  # 启动url
+  # url加载
   url_launcher: ^6.0.9
+  # 数据库
+  moor: ^4.4.1
+  # 图标库
+  line_awesome_flutter: ^2.0.0
+  flutter_spinkit: ^5.0.0
+  # 发现网络连接，区分蜂窝和WIFI链接
+  connectivity_plus: ^1.0.6
+  # Http client
+  dio: ^4.0.0
+  # protobufs通信协议
+  protobuf: ^2.0.0
+  # Kotlin 语法增强
+  supercharged: ^2.0.0
+  # 动画
+  simple_animations: ^3.1.1
+  # 同步锁
+  synchronized: ^3.0.0
 
 dev_dependencies: 
+  # 官方 Dart lint 规则
   lints: 1.0.1
+  # dart 文件生成
+  build_runner: ^2.0.6
+  # Table类从 moor 转换为数据库代码的生成器
+  moor_generator: ^4.4.1
   flutter_test: 
     sdk: flutter
 

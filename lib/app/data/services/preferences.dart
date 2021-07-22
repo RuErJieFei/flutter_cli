@@ -6,14 +6,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../utils/log.dart';
 import '../../themes/app_theme.dart';
 
-final S = () => Get.find<SharedPreferecesService>();
+final S = () => Get.find<SharedPrefereces>();
 
 /// 持久化服务
-class SharedPreferecesService extends GetxService {
+class SharedPrefereces extends GetxService {
   late SharedPreferences _prefs;
   final List<VoidCallback> listenKeyDisposers = [];
 
-  Future<SharedPreferecesService> init() async {
+  Future<SharedPrefereces> init() async {
     _prefs = await SharedPreferences.getInstance();
     // sLog.e("SharedPreferences init()");
     return this;

@@ -22,7 +22,7 @@ class LocaleKeys {
 
 class Locales {
   static const zh = {
-    'app_name': 'Pecker Flutter',
+    'app_name': 'Flutter CLI',
     'app_cancel': '取消',
     'aphorism_1': '教育的根是苦的，但其果实是甜的。',
     'aphorism_2': '忍耐是痛苦的，但它的果实是甜蜜的。',
@@ -34,7 +34,7 @@ class Locales {
     'locales_system': '跟随系统',
   };
   static const en = {
-    'app_name': 'Pecker Flutter',
+    'app_name': 'Flutter CLI',
     'app_cancel': 'Cancel',
     'aphorism_1':
         'The roots of education are bitter , but the fruit is sweet .',

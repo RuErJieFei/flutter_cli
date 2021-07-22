@@ -24,7 +24,7 @@ class AppMiddlewares {
   static String get curRoute => _curRoute;
 
   static _checkRouteChange(String newRoute) {
-    // 空路由不算
+    /// 空路由不算
     if (newRoute == '') {
       return;
     }
@@ -37,7 +37,7 @@ class AppMiddlewares {
       T().pageEnd(_curRoute);
     }
     if (newRoute != Routes.SPLASH) T().pageStart(newRoute);
-    sLog.d('route changed: $_curRoute => $newRoute');
+    // sLog.d('route changed: $_curRoute => $newRoute');
 
     _routeChanged(_curRoute, newRoute);
 

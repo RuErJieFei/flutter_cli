@@ -7,6 +7,7 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const SPLASH = _Paths.SPLASH;
   static const WEB_VIEW = _Paths.WEB_VIEW;
+  static const GLOBAL_WIDGETS_SAMPLE_VIEW = _Paths.GLOBAL_WIDGETS_SAMPLE_VIEW;
 }
 
 abstract class _Paths {
@@ -18,4 +19,7 @@ abstract class _Paths {
 
   /// 网页
   static const WEB_VIEW = '/web-view';
+
+  /// 通用组件
+  static const GLOBAL_WIDGETS_SAMPLE_VIEW = '/global-widgets-sample-view';
 }

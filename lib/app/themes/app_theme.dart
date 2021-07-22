@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../data/services/preferences_service.dart';
+import '../data/services/preferences.dart';
 
 /// 应用主题，默认系统主题
 class AppTheme {

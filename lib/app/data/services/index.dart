@@ -1,3 +1,4 @@
 export 'sentry.dart';
-export 'preferences_service.dart';
+export 'preferences.dart';
 export 'browser.dart';
+export 'task.dart';

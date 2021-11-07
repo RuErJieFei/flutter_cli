@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cli/app/global_widgets/index.dart';
-import 'package:flutter_cli/utils/index.dart';
 
 import 'package:get/get.dart';
 

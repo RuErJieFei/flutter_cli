@@ -51,6 +51,7 @@ class _AnimButtonState extends State<AnimButton> with AnimationMixin {
 
   @override
   void initState() {
+    scale = 1.0.tweenTo(123).curved(Curves.bounceInOut).animate(controller);
     scale = 1.0
         .tweenTo(widget.endScale ?? 0.95)
         .curved(Curves.bounceInOut)

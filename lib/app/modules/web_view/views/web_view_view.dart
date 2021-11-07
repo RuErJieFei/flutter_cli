@@ -34,7 +34,8 @@ class WebViewView extends GetView<WebViewController> {
             Expanded(
               child: Container(
                 child: InAppWebView(
-                  initialUrlRequest: URLRequest(url: Uri.parse(controller.url)),
+                  initialUrlRequest:
+                      URLRequest(url: Uri.parse('https://www.baidu.com')),
                   initialOptions: InAppWebViewGroupOptions(
                     android: AndroidInAppWebViewOptions(),
                     ios: IOSInAppWebViewOptions(),

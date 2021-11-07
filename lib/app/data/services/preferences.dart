@@ -30,6 +30,9 @@ class SharedPrefereces extends GetxService {
     super.onClose();
   }
 
+  /// 由于本地缓存数据量少
+  /// 所以使用具体名称定义使用
+
   String get token => _prefs.getString('_token') ?? '';
   set token(String value) => _prefs.setString('_token', value);
 
